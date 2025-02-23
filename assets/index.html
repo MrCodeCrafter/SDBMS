@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+    <div id="login-section">
+        <h2>Login</h2>
+        <label for="role">Select Role:</label>
+        <select id="role">
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+        </select>
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div id="main-content" class="container" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Student Records</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#" id="add-student-menu">Add Student</a></li>
+                    <li><a href="#" id="view-records-menu">View Records</a></li>
+                    <li><a href="#" id="export-csv">Export CSV</a></li>
+                    <li><a href="#" id="toggle-dark-mode">Dark Mode</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header>
+                <h1>Dashboard</h1>
+                <button id="logout-btn">Logout</button>
+            </header>
+
+            <!-- Expanded Student Data Form -->
+            <section class="form-section" id="add-student-section">
+                <h2>Add Student Record</h2>
+                <form id="student-form">
+                    <div class="input-group">
+                        <label for="admission-no">Admission Number:</label>
+                        <input type="text" id="admission-no" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="doa">Date of Admission:</label>
+                        <input type="date" id="doa" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="aadhar">Aadhar Number:</label>
+                        <input type="text" id="aadhar">
+                    </div>
+                    <div class="input-group">
+                        <label for="cwsn">CWSN (Children with Special Needs):</label>
+                        <select id="cwsn">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="father">Father’s Name:</label>
+                        <input type="text" id="father" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="mother">Mother’s Name:</label>
+                        <input type="text" id="mother" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="contact">Parent’s Contact Number:</label>
+                        <input type="tel" id="contact" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="hostler">Hostler:</label>
+                        <select id="hostler">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="guardian">Local Guardian’s Name:</label>
+                        <input type="text" id="guardian">
+                    </div>
+                    <div class="input-group">
+                        <label for="guardian-address">Guardian’s Address:</label>
+                        <input type="text" id="guardian-address">
+                    </div>
+                    <div class="input-group">
+                        <label for="guardian-contact">Guardian’s Contact Number:</label>
+                        <input type="tel" id="guardian-contact">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="id-marks">Identification Marks:</label>
+                        <input type="text" id="id-marks">
+                    </div>
+                    <button type="submit">Save Record</button>
+                </form>
+            </section>
+
+            <!-- Expanded Student Table -->
+            <section class="table-section">
+                <h2>Student Records</h2>
+                <input type="text" id="search" placeholder="Search students...">
+                <table>
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Admission No ⬍</th>
+                            <th onclick="sortTable(1)">Name ⬍</th>
+                            <th onclick="sortTable(2)">Address ⬍</th>
+                            <th onclick="sortTable(3)">DOB ⬍</th>
+                            <th onclick="sortTable(4)">DOA ⬍</th>
+                            <th onclick="sortTable(5)">Aadhar No ⬍</th>
+                            <th onclick="sortTable(6)">CWSN ⬍</th>
+                            <th onclick="sortTable(7)">Parents' Contact ⬍</th>
+                            <th onclick="sortTable(8)">Hostler ⬍</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Student data will be inserted here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
