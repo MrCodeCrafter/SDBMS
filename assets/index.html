@@ -7,19 +7,14 @@
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+    <header>
+        <h1>Student Management System</h1>
+        <span class="menu-icon">&#9776;</span>
+    </header>
 
-    <div id="login-section">
-        <h2>Login</h2>
-        <label for="role">Select Role:</label>
-        <select id="role">
-            <option value="admin">Admin</option>
-            <option value="staff">Staff</option>
-        </select>
-        <button id="login-btn">Login</button>
-    </div>
 
-    <div id="main-content" class="container" style="display: none;">
-        <!-- Sidebar -->
+
+    <div id="main-content" class="container">
         <aside class="sidebar">
             <h2>Student Records</h2>
             <nav>
@@ -33,14 +28,12 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="content">
             <header>
                 <h1>Dashboard</h1>
                 <button id="logout-btn">Logout</button>
             </header>
 
-            <!-- Expanded Student Data Form -->
             <section class="form-section" id="add-student-section">
                 <h2>Add Student Record</h2>
                 <form id="student-form">
@@ -118,7 +111,6 @@
                 </form>
             </section>
 
-            <!-- Expanded Student Table -->
             <section class="table-section">
                 <h2>Student Records</h2>
                 <input type="text" id="search" placeholder="Search students...">

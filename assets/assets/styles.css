@@ -1,4 +1,4 @@
-/* Reset styles */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,52 +6,81 @@
     font-family: Arial, sans-serif;
 }
 
-/* Layout */
-.container {
+/* Navbar */
+header {
     display: flex;
-    height: 100vh;
-}
-
-/* Login Section */
-#login-section {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #f8f9fa;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-#login-section h2 {
-    margin-bottom: 15px;
+/* Center Dashboard Heading */
+.content header {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
 }
 
-#login-section select, #login-section button {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.content header h1 {
+    flex: 1; /* Takes full width */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-#login-btn {
-    background: #2ecc71;
+#logout-btn {
+    position: absolute;
+    right: 20px; /* Keeps it on the right */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #F35252; /* Red from your color palette */
     color: white;
     border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    width: 120px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-#login-btn:hover {
-    background: #27ae60;
+#logout-btn:hover {
+    background: #D43C3C; /* Slightly darker red for hover */
+    transform: translateY(-50%) scale(1.05); /* Slight zoom effect */
+}
+
+#logout-btn:active {
+    background: #B53030; /* Even darker red for click effect */
+    transform: translateY(-50%) scale(0.95); /* Shrinks slightly when clicked */
+}
+
+
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Sidebar */
 .sidebar {
     width: 250px;
-    background: #2c3e50;
+    height: 100vh;
+    background: #333;
     color: white;
+    position: fixed;
+    left: 0;
+    top: 60px;
     padding: 20px;
+    transition: all 0.3s ease;
 }
 
 .sidebar h2 {
@@ -61,68 +90,47 @@
 
 .sidebar nav ul {
     list-style: none;
-    padding: 0;
 }
 
 .sidebar nav ul li {
-    margin: 10px 0;
+    padding: 12px;
 }
 
 .sidebar nav ul li a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     display: block;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 8px;
     transition: 0.3s;
 }
 
 .sidebar nav ul li a:hover {
-    background: #34495e;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
 
 /* Main Content */
 .content {
-    flex: 1;
+    margin-left: 270px;
     padding: 20px;
-    background: #ecf0f1;
-    position: relative;
-    overflow-y: auto;
 }
 
-/* Header */
-header {
-    background: #3498db;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    border-radius: 5px;
+.content header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Logout Button */
-#logout-btn {
-    background: #e74c3c;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-#logout-btn:hover {
-    background: #c0392b;
-}
 
 /* Form Section */
 .form-section {
     background: white;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .input-group {
@@ -134,112 +142,83 @@ header {
     font-weight: bold;
 }
 
-.input-group input,
-.input-group select {
+.input-group input, .input-group select {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
 }
 
-/* Button */
-button {
-    background: #2ecc71;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #27ae60;
-}
-
-/* Table Section */
+/* Student Table */
 .table-section {
-    margin-top: 20px;
     background: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
+}
+
+.table-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+thead {
+    background: #222;
+    color: white;
+}
+
+th, td {
     padding: 12px;
+    border: 1px solid #ccc;
     text-align: center;
 }
 
 th {
-    background: #3498db;
-    color: white;
     cursor: pointer;
 }
 
-tr:nth-child(even) {
+tbody tr:hover {
     background: #f2f2f2;
 }
 
 /* Dark Mode */
-body.dark-mode {
-    background-color: #1e1e1e;
+.dark-mode {
+    background: #222;
     color: white;
 }
 
-.dark-mode .content {
-    background: #2e2e2e;
-}
-
-.dark-mode .sidebar {
-    background: #000;
-}
-
-.dark-mode table, .dark-mode th, .dark-mode td {
-    background: #444;
-    color: white;
-    border-color: #777;
-}
-
-.dark-mode input,
-.dark-mode select,
-.dark-mode button {
+.dark-mode .content,
+.dark-mode .form-section,
+.dark-mode .table-section {
     background: #333;
     color: white;
-    border: 1px solid #555;
 }
 
-/* Responsive Adjustments */
+.dark-mode input, .dark-mode select {
+    background: #444;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
     .sidebar {
-        width: 100%;
-        text-align: center;
+        width: 200px;
     }
-
+    
     .content {
-        padding: 10px;
+        margin-left: 220px;
     }
-
-    table, th, td {
-        font-size: 12px;
-    }
-
-    button {
-        width: 100%;
+    
+    th, td {
         font-size: 14px;
     }
 }

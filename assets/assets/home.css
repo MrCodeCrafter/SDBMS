@@ -1,0 +1,208 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern aesthetic font */
+}
+
+/* Color Palette */
+:root {
+    --primary-yellow: #FFE588;
+    --primary-peach: #F79D65;
+    --primary-red: #F35252;
+    --primary-teal: #5EF2D5;
+    --primary-blue: #60B5FF;
+    --white: #ffffff;
+    --dark-text: #333;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: center;  /* Center content horizontally */
+    align-items: center;  /* Align content vertically */
+    background: var(--primary-red); /* Updated color */
+    color: var(--white);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Ensure menu button stays on the right */
+.menu-icon {
+    position: absolute;
+    right: 20px;  
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 1100;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    color: var(--primary-yellow);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('school-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--primary-yellow);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: var(--white);
+    max-width: 80%;
+    margin: auto;
+}
+
+/* Scrollable Login Menu */
+.login-menu {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 350px;
+    z-index: 1500;
+    
+    /* Scrolling Options */
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+/* Scrollbar Styling */
+.login-menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.login-menu::-webkit-scrollbar-track {
+    background: var(--primary-yellow);
+}
+
+.login-menu::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 5px;
+}
+
+.login-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-peach);
+}
+
+/* Login Menu Elements */
+.login-menu h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+
+.login-group {
+    margin-bottom: 20px;
+}
+
+.login-group h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary-teal);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: var(--primary-peach);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--primary-red);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--primary-red);
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--primary-peach);
+    transform: scale(1.3);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .login-menu {
+        width: 90%;
+        top: 5%;
+    }
+}
